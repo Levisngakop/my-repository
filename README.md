@@ -1,6 +1,6 @@
 # my-repository
 I enjoy working on GitHub
-This is an amazing workspace for all developers ranging from; begenners to professionals
+This is an amazing workspace for all developers ranging from; beginners to professionals
 Giihub is a working and collaborative space for developers to work remotely
 Git on the other hand is a tool that enable developers to develope and create code and push it into the centralised repository
 There are some basic commands and key terms to be mastered while using GitHub as a service and git in general. these include; git pull, git push, git commit, git fetch, git clone, and git merge.

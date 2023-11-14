@@ -5,7 +5,7 @@ node('built-in') {
 }
   stage('Codebuild')
 {
-    sh 'mvn package'
+    sh 'mvn clean install'
 } 
 stage('CodedeployQAT') 
 {

@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+    stages{
+        stage ('CodeCheckout'){
+            steps {
+                echo 'Downloading the project'
+                git 'https://github.com/mankinimbom/maven.git'
+            }
+        }
+        stage ('CodeBuild') {
+            steps {
+                echo 'Building the project'
+                sh 'mvn clean install'
+            }
+        }
+        stage ('CodeTesting') {
+            steps {
+                echo 'Testing the project'
+                git 'https://github.com/mankinimbom/testingproject.git'
+                sh 'java -jar /var/lib/jenkins/workspace/pipeline_new/testing.jar'
+            }
+        }
+        stage ('CodeDeployment') {
+            steps {
+                echo 'Deploying the project'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat1', path: '', url: 'http://54.84.57.48:8080')], contextPath: 'test', war: '**/*.war'
+            }
+        }
+        stage ('CodeDelivery') {
+            steps {
+                echo 'Delivering the project'
+            }
+        }
+        stage ('CodeMonitoring') {
+            steps {
+                echo 'Monitoring the project'
+            }
+        }
+    }  
+}

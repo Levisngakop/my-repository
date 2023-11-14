@@ -33,7 +33,7 @@ pipeline {
         }
         stage ('CodeMonitoring') {
             steps {
-                echo 'Monitoring the project'
+                echo 'Monitoring the project to suceed'
             }
         }
     }  

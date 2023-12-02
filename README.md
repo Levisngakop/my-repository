@@ -10,4 +10,4 @@ Git Commit helps us to commit changes we make both on our local machine and on o
 Git fetch downloads our recent changes from our remote repository into our local machine without necessarily merging them. it gives us the option to view and accept it first before we can do the merging ourselves.
 Git clone, helps us to duplicate a repository automatically. this must be a repository which exists already.
 git merge helps us to join information existing together. 
-the end
+the end..

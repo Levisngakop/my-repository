@@ -28,7 +28,7 @@ pipeline {
         }
         stage ('CodeDelivery') {
             steps {
-                echo 'Delivering the project'
+                echo 'Delivering the project'}
             }
         }
         stage ('CodeMonitoring') {

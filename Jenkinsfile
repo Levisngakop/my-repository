@@ -7,7 +7,7 @@ node('built-in') {
 {
     sh 'mvn clean install'
 } 
-stage('CodedeployQAT') 
+stage('CodedeployQAT') }
 {
     deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://4.227.254.138:8083/testapp')], contextPath: 'testapp', war: '**/*.war'
 }

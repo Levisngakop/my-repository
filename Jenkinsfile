@@ -6,7 +6,7 @@ node('built-in') {
   stage('Codebuild')
 {
     sh 'mvn clean install'
-} }
+} 
 stage('CodedeployQAT') }
 {
     deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://4.227.254.138:8083/testapp')], contextPath: 'testapp', war: '**/*.war'
@@ -20,5 +20,6 @@ stage('CodedeployPROD')
 {
     deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://4.227.254.138:8083/webapp')], contextPath: 'webapp', war: '**/*.war'
     stage('codemonitor')
+}
 }
 }

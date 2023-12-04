@@ -1,0 +1,23 @@
+pipeline {
+    agemt any
+    stages {
+        stage ('ContinuousDownload') {
+            steps {
+                script {
+                    try {
+                        git 'https://github.com/mankinimbom/maven.git'
+                    } catch (Exception e1) {
+                        mail bcc: '', body: 'jenkins failed to clone code from gitHub', 
+                        cc: 'levisngakop47@gmail.com', from: '', replyTo: '',
+                         subject: 'failed to clone code', 
+                        to: 'levisngakop4@gmail.com' 
+                      error ('git clone failed')
+                }    catch (Exception e2) {
+                    catchError(buildResult: 'SUCCESS', message: 'Build successfully ran') {
+    // some block
+}
+                }
+            }
+        }
+    }
+}

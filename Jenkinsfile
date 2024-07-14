@@ -15,6 +15,7 @@ stage('Codetesting')
 {
     git 'https://github.com/Levisngakop/testingproject.git'
     sh 'java -jar /var/lib/jenkins/workspace/levis-pipeline/testing.jar'
+    echo "sucessfully tested"
 }
 stage('CodedeployPROD') 
 {
